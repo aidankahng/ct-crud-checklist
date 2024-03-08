@@ -1,23 +1,6 @@
 # In this project, you will create a command-line To-Do List Manager using Python. The application should allow users to add tasks, view tasks, edit task completion status, delete tasks, and quit.
-
-# Task Class
-# Implement a Task class to represent individual tasks.
-# Each task should have a unique ID, a description, and a completion status
-# Include a method to display the task in a user-friendly format.
-# To-Do List Class
-# Implement a ToDoList class to manage a list of tasks.
-# Include methods for adding tasks, viewing tasks, editing task completion status, deleting tasks, and retrieving tasks by ID.
-# User Interactions
-# Create a simple user interface for the To-Do List Manager using a loop.
-# Provide options for users to:
-# Add a new task.
-# View all tasks.
-# Edit the completion status of a task.
-# Delete a task.
-# Quit the manager.
-# Implement appropriate data validation to handle user input and prevent errors.
-
 import colorama
+
 
 class Checklist:
     def __init__(self):
