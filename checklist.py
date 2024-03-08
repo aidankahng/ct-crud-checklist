@@ -58,24 +58,30 @@ Your Checklist:
         item = self.__get_item_by_id()
         if item:
             print(item)
-            confirm_complete = input("Confirm complete this item (y)? ").lower()
-            if confirm_complete == 'y':
-                item.complete()
-                print(f"\033[32m{item.name}\033[39m has been marked completed")
+            if item.completed == False:
+                confirm_complete = input("Confirm complete this item (y)? ").lower()
+                if confirm_complete == 'y':
+                    item.complete()
+                    print(f"\033[32m{item.name}\033[39m has been marked completed")
+                else:
+                    print(f"No changes were made to {item.name}")
             else:
-                print(f"No changes were made to {item.name}")
+                print(f"{item.name} is already complete.")
     
     def uncomplete_item(self):
         print("Attempting to uncomplete an item...")
         item = self.__get_item_by_id()
         if item:
             print(item)
-            confirm_complete = input("Confirm mark incomplete (y)? ").lower()
-            if confirm_complete == 'y':
-                item.uncomplete()
-                print(f"\033[33m{item.name}\033[39m has been marked incomplete")
+            if item.completed == True:
+                confirm_complete = input("Confirm mark incomplete (y)? ").lower()
+                if confirm_complete == 'y':
+                    item.uncomplete()
+                    print(f"\033[33m{item.name}\033[39m has been marked incomplete.")
+                else:
+                    print(f"No changes were made to {item.name}")
             else:
-                print(f"No changes were made to {item.name}")
+                print(f"{item.name} is already incomplete.")
 
     def delete_item(self):
         print("Attempting to delete an item...")
@@ -84,7 +90,7 @@ Your Checklist:
             print(item)
             confirm_del = input("Confirm deletion (y)? ").lower()
             if confirm_del == 'y':
-                print(f"Deleting {item.name}...")
+                print(f"Deleting \033[31m{item.name}...\033[39m")
                 self.items.remove(item)
             else:
                 print("Cancelling deletion.")
@@ -107,7 +113,7 @@ class ChecklistItem:
             ret_str += '\033[32m' #GREEN
         else:
             ret_str += '\033[33m' #YELLOW
-        ret_str += f"[{check}] {self.name}\033[39m"
+        ret_str += f"{self.item_id}. {self.name} [{check}]\033[39m"
         return ret_str
     
     def complete(self):
