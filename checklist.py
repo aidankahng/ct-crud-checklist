@@ -19,7 +19,7 @@
 
 import colorama
 
-class Checklist: #To-Do List Class
+class Checklist:
     def __init__(self):
         self.items = []
     
@@ -108,7 +108,7 @@ Your Checklist:
                 
 
 # Class ChecklistItem handles individual entries in the Checklist
-class ChecklistItem: #Task Class
+class ChecklistItem:
     item_id = 1
     def __init__(self, name):
         self.item_id = ChecklistItem.item_id
