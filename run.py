@@ -1,4 +1,4 @@
-from checklist import Checklist, ChecklistItem
+from checklist import Checklist
 
 def main():
     c = Checklist()
