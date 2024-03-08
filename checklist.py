@@ -132,22 +132,3 @@ class ChecklistItem: #Task Class
     
     def uncomplete(self):
         self.completed = False
-
-
-########## TESTING ##############
-# test_item1 = ChecklistItem("this is item1")
-# test_item2 = ChecklistItem("this one is item2")
-# checklist = Checklist()
-# checklist.items.append(test_item1)
-# checklist.items.append(test_item2)
-
-# test_item1.complete()
-
-# checklist.view_item()
-# checklist.complete_item()
-# checklist.uncomplete_item()
-# checklist.create_new_item()
-# checklist.delete_item()
-# checklist.edit_item()
-
-# print(checklist)
